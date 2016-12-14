@@ -9,10 +9,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="frist"><a><router-link to="/home">分类资产</router-link></a></li>
-          <li><a><router-link to="/home">首 &nbsp  页</router-link></a></li>
-            <li><a><router-link to="/home">免费挂单</router-link></a></li>
-        <li><a><router-link to="/home">发 &nbsp 现</router-link></a></li>
+          <li class="frist "><a class="menu"><router-link to="/home">分类资产</router-link></a></li>
+          <li><a class="menu"><router-link to="/home">首 &nbsp  页</router-link></a></li>
+            <li><a class="menu"><router-link to="/home">免费挂单</router-link></a></li>
+        <li><a class="menu"><router-link to="/home">发 &nbsp 现</router-link></a></li>
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
@@ -41,30 +41,38 @@ export default {
 </script>
 <style>
 .logo {
-  width: 100%;
-  min-width: 1080px;
+  width: 1200px;
+  margin:0 auto;
+  padding-left: 20px;
 }
 
 .logo>img {
   margin: 0 10px 0 50px;
 }
-nav{
+.navbar{
   background-color: #000 !important;
   border:none !important;
 }
-ul{
+.container-fluid{
+  width:1200px;
+  margin:0 auto;
+}
+.nav{
   width: 65%;
-  padding:0 100px !important;
+
 }
 ul>.frist{
   background: url(../assets/ver-line.png) no-repeat left center;
 }
-ul>li>a{
+ul>li>.menu{
   color:#fff !important;
   font-size: 1.2em;
   background: url(../assets/ver-line.png) no-repeat right center;
   padding-left: 30px !important;
   padding-right: 30px !important;
+}
+.menu>a{
+  color:inherit;
 }
 .search{
   display: inline-block;
