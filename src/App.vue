@@ -48,7 +48,12 @@
   </div>
   <div class="container">
     <div class="col-sm-3">
-      <tips></tips>
+      <div v-if="showtips">
+        <tips></tips>
+      </div>
+      <div v-else>
+        <left></left>
+      </div>
     </div>
     <div class="col-sm-9">
       <router-view></router-view>
@@ -178,15 +183,18 @@
 
 <script>
 import tips from './components/tips'
+import left from './components/left'
 export default {
   data () {
     return {
       msg: '基于智能合约的数字资产OTC平台',
-      msg2: '挂单 / 登录离线钱包'
+      msg2: '挂单 / 登录离线钱包',
+      showtips: false
     }
   },
   components: {
-    tips
+    tips,
+    left
   }
 }
 </script>

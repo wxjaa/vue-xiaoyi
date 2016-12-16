@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
 import login from './components/login'
+import nonPayment from './components/nonPayment'
 import 'bootstrap/dist/css/bootstrap.css'
 import VueResource from 'vue-resource'
 
@@ -12,6 +13,12 @@ Vue.use(VueResource)
 const routes = [{
   path: '/login',
   component: login
+}, {
+  path: '/',
+  component: login
+}, {
+  path: '/nonPayment',
+  component: nonPayment
 }]
 
 const router = new VueRouter({
