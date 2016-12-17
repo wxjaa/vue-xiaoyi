@@ -12,7 +12,7 @@
         <span class="input-group-addon" style="filter:alpha(opacity=0); -moz-opacity:0; opacity:0;">选择文件</span>
       </div>
       <div class="input-group" >
-        <button type="button" style="border-radius:6px;" class="form-control select-file">登 &nbsp &nbsp 录</button>
+        <button type="button" style="border-radius:6px;" class="form-control select-file"><a style="color:#fff" href="/totalAssets">登 &nbsp &nbsp 录</a></button>
         <span class="input-group-addon" style="filter:alpha(opacity=0); -moz-opacity:0; opacity:0;">选择文件</span>
       </div>
       <div class="register">
