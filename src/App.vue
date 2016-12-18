@@ -1,200 +1,34 @@
 <template>
 <div class="" style="background-color:#fff">
-  <div id="head" style="background-color:#eee">
-    <div class="logo">
-      <img src="./assets/logo.png" alt="" />
-      <span id="des">{{ msg }}</span>
-    </div>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="frist ">
-              <a class="menu">
-                <router-link to="/home">分类资产</router-link>
-              </a>
-            </li>
-            <li>
-              <a class="menu">
-                <router-link to="/home">首 &nbsp 页</router-link>
-              </a>
-            </li>
-            <li>
-              <a class="menu">
-                <router-link to="/home">免费挂单</router-link>
-              </a>
-            </li>
-            <li>
-              <a class="menu">
-                <router-link to="/home">发 &nbsp 现</router-link>
-              </a>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="小蚁股">
-            </div>
-            <button type="submit" class="btn btn-default">搜索</button>
-          </form>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  </div>
+  <h>
+  </h>
   <div class="msg">
     {{msg2}}
   </div>
   <div class="container">
-    <div class="col-sm-3">
-      <div v-if="showtips">
-        <tips></tips>
-      </div>
-      <div v-else>
-        <left></left>
-      </div>
-    </div>
-    <div class="col-sm-9">
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </div>
-  <div class="" style="width:100%;background-color:#eee">
+  <div style="width:100%;background-color:#eee">
     <div style="min-width:1200px;width:1200px;margin:20px auto 0">
-      <div class="" id="footer">
-        <div class="row foot-top">
-          <div class="col-lg-3 col-md-3 bg-li">
-            <span class="bg-blue  bg-blue1">
-              </span>
-            <div class="foot-li" style="">
-              <p class="foot-type">资金无忧</p>
-              <p class="foot-des">智能合约点对点结算</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 bg-li">
-            <span class="bg-blue  bg-blue2">
-              </span>
-            <div class="foot-li" style="">
-              <p class="foot-type">快捷撮合</p>
-              <p class="foot-des">无确认的信息撮合效率</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 bg-li">
-            <span class="bg-blue bg-blue3">
-              </span>
-            <div class="foot-li" style="">
-              <p class="foot-type">免费挂单</p>
-              <p class="foot-des">无需实名，一键挂单</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 bg-li" style="background-image:none">
-            <span class="bg-blue bg-blue4">
-              </span>
-            <div class="foot-li" style="">
-              <p class="foot-type">海量品类</p>
-              <p class="foot-des">满足长尾市场投资需求</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-md-12">
-            <div class="row about">
-              <div class="col-lg-10 col-md-10  row">
-                <div class="col-lg-3  col-md-3 text-center">
-                  <h4 class="text-color text-type2">合作伙伴</h4>
-                  <ul class="list-unstyled">
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">小蚁区快链</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">评级公司</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">众筹平台</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">巴比特</router-link>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 text-center">
-                  <h4 class="text-color text-type2">了解我们</h4>
-                  <ul class="list-unstyled">
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">了解小蚁</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">什么是OTC</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">OTC优势</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">联系我们</router-link>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 text-center">
-                  <h4 class="text-color text-type2">帮助中心</h4>
-                  <ul class="list-unstyled">
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">投资流程</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">挂单流程</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">客服中心</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">常见问题</router-link>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 text-center">
-                  <h4 class="text-color text-type2">友情链接</h4>
-                  <ul class="list-unstyled">
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">小蚁官网</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">BB评级</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">天使汇</router-link>
-                    </li>
-                    <li>
-                      <router-link class="text-color2" to="/time-entries">比特时代</router-link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-2 text-center">
-                <h4 class="text-color text-type2">微信订阅号</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <foot></foot>
     </div>
   </div>
 </div>
 </template>
 
 <script>
-import tips from './components/tips'
-import left from './components/left'
+import h from './components/head.vue'
+import foot from './components/footer.vue'
 export default {
   data () {
     return {
       msg: '基于智能合约的数字资产OTC平台',
-      msg2: '挂单 / 登录离线钱包',
-      showtips: false
+      msg2: '挂单 / 登录离线钱包'
     }
   },
   components: {
-    tips,
-    left
+    h,
+    foot
   }
 }
 </script>

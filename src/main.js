@@ -6,6 +6,7 @@ import App from './App'
 import login from './components/login'
 import nonPayment from './components/nonPayment'
 import totalAssets from './components/totalAssets'
+import searchResult from './components/searchResult'
 import 'bootstrap/dist/css/bootstrap.css'
 import VueResource from 'vue-resource'
 
@@ -23,6 +24,9 @@ const routes = [{
 }, {
   path: '/totalAssets',
   component: totalAssets
+}, {
+  path: '/searchResult',
+  component: searchResult
 }]
 
 const router = new VueRouter({

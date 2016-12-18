@@ -1,5 +1,17 @@
 <template lang="html">
-  <div class="content" v-on:click="hide">
+  <div class="row">
+    <div class="col-sm-3 col-lg-3">
+      <div id="left">
+          <h4 class="left-title text-center">菜 单</h4>
+          <ul>
+            <li class="left-item" v-for="tip in tips">
+              <router-link to="/#">{{tip.text}}</router-link>
+
+            </li>
+          </ul>
+      </div>
+    </div>
+  <div class="content col-sm-9 col-lg-9" v-on:click="hide">
     <h3 class="h2" style="border-bottom:none">账户总资产估算：{{price}} &nbsp;CNY</h3>
       <table class="table table-hover table-striped" style="margon-top:0;font-size:16px;">
         <thead>
@@ -44,6 +56,12 @@
    </td>
  </tr></tbody>
       </table>
+      <div v-if="isSend_sell" class="send_sellPop">
+           <h2 style="margin-top:0;">挂单成功!</h2>
+           <p>
+             可在“我的挂单”中查看详情。
+           </p>
+      </div>
       <div v-if="isSell" class="sell_pop">
         <div class="sell_content">
           <div id="sanjiao">
@@ -76,7 +94,7 @@
     </div>
     <div class="form-group" style="padding-top:20px;margin-top:30px;border-top:1px solid #d1d1d1">
       <div class="col-sm-offset-8 col-sm-4">
-        <button type="button" class="btn btn-primary">发送卖单</button>
+        <button type="button" class="btn btn-primary" v-on:click="showPop">发送卖单</button>
       </div>
     </div>
   </form>
@@ -96,7 +114,7 @@
     <li><a href="#">&raquo;</a></li>
   </ul>
 </nav>
-  </div>
+  </div></div>
 </template>
 
 <script>
@@ -105,6 +123,7 @@ export default {
     return {
       price: '11000.75',
       isSell: false,
+      isSend_sell: false,
       items: [{
         type: '小蚁股',
         num: '10000.25',
@@ -115,23 +134,48 @@ export default {
         num: '236.00',
         price: '1.05',
         total: '95000'
+      }],
+      tips: [{
+        text: '我 的 挂 单',
+        router: ''
+      }, {
+        text: '代 付 款',
+        router: ''
+      }, {
+        text: '资 产 列 表',
+        router: ''
+      }, {
+        text: '个 人 中 心',
+        router: ''
+      }, {
+        text: '隐 私 政 策',
+        router: ''
+      }, {
+        text: '关 于',
+        router: ''
       }]
     }
   },
   methods: {
     show: function (e) {
       e = e || window.event
-      console.log(e)
       e.stopPropagation()
       e.preventDefault()
       this.isSell = !this.isSell
     },
     hide: function (e) {
-      console.log(1111)
       e = e || window.event
       e.stopPropagation()
       e.preventDefault()
       this.isSell = false
+      this.isSend_sell = false
+    },
+    showPop: function (e) {
+      e = e || window.event
+      e.stopPropagation()
+      e.preventDefault()
+      this.isSell = false
+      this.isSend_sell = true
     }
   }
 }
@@ -178,7 +222,18 @@ export default {
   background: #fff;
   z-index: 999;
 }
-
+.send_sellPop{
+  position:absolute;
+  top:120px;
+  right:178px;
+  background: #fff;
+  z-index: 999;
+  padding: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+  color:#666;
+    box-shadow: 0 0 25px #666;
+}
 .sell_content{
   position:relative;
   padding: 25px;

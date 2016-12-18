@@ -18,20 +18,17 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="小蚁股">
           </div>
-          <button type="submit" class="btn btn-default">搜索</button>
+          <button type="submit" class="btn btn-default">
+            <router-link to="/searchResult" style="color:#000">搜索</router-link></button>
         </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 </div>
 </template>
-<style >
-#header {
-  width: 100%;
-}
-</style>
 <script>
 export default {
+  name: 'h',
   data () {
     return {
       msg: '基于智能合约的数字资产OTC平台'
@@ -40,6 +37,9 @@ export default {
 }
 </script>
 <style>
+#header {
+  width: 100%;
+}
 .logo {
   width: 1200px;
   margin:0 auto;

@@ -1,5 +1,15 @@
 <template>
-<div class="content">
+  <div class="row">
+    <div class="col-sm-3 col-lg-3">
+      <div id="tips">
+        <ol>
+          <li v-for="item in items">
+             {{item}}
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="content col-sm-9 col-lg-9">
   <h3 class="h2">登录离线钱包</h3>
   <div>
     <form class="from-group login">
@@ -12,24 +22,33 @@
         <span class="input-group-addon" style="filter:alpha(opacity=0); -moz-opacity:0; opacity:0;">选择文件</span>
       </div>
       <div class="input-group" >
-        <button type="button" style="border-radius:6px;" class="form-control select-file"><a style="color:#fff" href="/totalAssets">登 &nbsp &nbsp 录</a></button>
+        <button type="button" style="border-radius:6px;" class="form-control select-file"><router-link style="color:#fff" to="/totalAssets">登 &nbsp &nbsp 录</router-link></button>
         <span class="input-group-addon" style="filter:alpha(opacity=0); -moz-opacity:0; opacity:0;">选择文件</span>
       </div>
       <div class="register">
            <router-link to="/register">没有钱包?立即创建!</router-link>
       </div>
     </form>
-
   </div>
 
   <p class="tips">
     离线钱包有小蚁区块链提供技术支持
   </p>
-</div>
+</div></div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      items: [
+        '点击"浏览"按钮，找到钱包备份文件所在的硬盘位置，并导入。',
+        '输入您在创建钱包时,设置的钱包密码。',
+        '当前钱包页面为WED离线钱包页面，请放心导入钱包备份文件。（可通过断网验证）'
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="css">
