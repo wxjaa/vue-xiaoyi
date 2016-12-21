@@ -1,5 +1,8 @@
 <template lang="html">
   <div class="row">
+    <div class="msg">
+      {{msg}} / <span style="color:#009cff">{{msg2}}</span>
+    </div>
     <div class="col-sm-3 col-lg-3">
       <div id="tips">
     <ol>
@@ -107,7 +110,9 @@ export default {
       tips: [
         '当您输入大于卖一价格是，将会优先与卖一挂单成交；卖一挂单数量不够时，再自动与卖二的订单成交。以此类推',
         '点击“去钱包结算”按钮后，请登录离线钱包尽快结算订单，否则可能会被他人抢先结算，导致订单无效。'
-      ]
+      ],
+      msg: '集市',
+      msg2: '小蚁股专区'
     }
   }
 }

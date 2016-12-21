@@ -2,9 +2,9 @@
 <div class="" style="background-color:#fff">
   <h>
   </h>
-  <div class="msg">
+  <!-- <div class="msg">
     {{msg2}}
-  </div>
+  </div> -->
   <div class="container">
     <router-view></router-view>
   </div>
@@ -22,8 +22,7 @@ import foot from './components/footer.vue'
 export default {
   data () {
     return {
-      msg: '基于智能合约的数字资产OTC平台',
-      msg2: '挂单 / 登录离线钱包'
+      msg: '基于智能合约的数字资产OTC平台'
     }
   },
   components: {

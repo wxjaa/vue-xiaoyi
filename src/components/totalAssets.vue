@@ -1,5 +1,8 @@
 <template lang="html">
   <div class="row">
+    <div class="msg">
+      {{msg}}
+    </div>
     <div class="col-sm-3 col-lg-3">
       <div id="left">
           <h4 class="left-title text-center">菜 单</h4>
@@ -122,6 +125,7 @@ export default {
   data () {
     return {
       price: '11000.75',
+      msg: '你已登录离线钱包',
       isSell: false,
       isSend_sell: false,
       items: [{
